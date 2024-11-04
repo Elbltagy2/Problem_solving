@@ -20,8 +20,9 @@ public class Solution {
      BigInteger sol=new BigInteger(1+"");
      for(int i=n;i>0;i--){
          BigInteger temp=new BigInteger(i+"");
-         sol.multiply(temp);
+         sol=sol.multiply(temp);
      }
+     
      System.out.println(sol);
      
 	
