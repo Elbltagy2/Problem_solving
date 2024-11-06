@@ -10,10 +10,7 @@ public class merge_sort {
 		for (int i = 0; i < n; i++) {
 			x[i]=sc.nextInt();
 		}
-		int sol[]=sortmerge(x);
-		for (int i = 0; i < sol.length; i++) {
-			System.out.print(sol[i]+" ");
-		}
+		System.out.println(maxProfit(x));
 
 		
 		
@@ -53,6 +50,17 @@ public class merge_sort {
 		}
 		return sol;
 	}
+	 public static int maxProfit(int[] prices) {
+	        int sol=0;
+	        int count[]=new int [prices.length];
+	        for(int i=prices.length-1;i>=0;i--){
+	            for(int j=i;j<prices.length;j++){
+	                count[i]=Math.max(sol,(count[j]+(prices[j]-prices[i])));
+	                sol=Math.max(count[i],sol);
+	            }
+	        }
+	        return sol;
+	    }
 
 
 }
